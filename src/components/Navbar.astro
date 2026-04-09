@@ -1,0 +1,58 @@
+---
+const navLinks = [
+    { name: "Inicio", href: "/" },
+    { name: "Servicios", href: "/services" },
+    { name: "Precios", href: "/prices" },
+    { name: "Blog", href: "/blogs" },
+];
+---
+
+<nav class="fixed top-0 w-full z-50 border-b border-white/[0.05] bg-brand-dark/70 backdrop-blur-xl transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        <a href="/" class="flex items-center gap-2 group">
+            <div
+                class="w-10 h-10 bg-brand-primary rounded-lg flex items-center justify-center font-black text-2xl group-hover:rotate-6 transition-transform"
+            >
+                P
+            </div>
+            <span class="text-xl font-bold tracking-tight text-white"
+                >Paladin<span class="text-brand-primary">.</span>Build</span
+            >
+        </a>
+
+        <div class="hidden md:flex items-center gap-8">
+            {
+                navLinks.map((link) => (
+                    <a
+                        href={link.href}
+                        class="text-sm font-medium text-slate-300 hover:text-brand-primary transition-colors"
+                    >
+                        {link.name}
+                    </a>
+                ))
+            }
+            <a
+                href="#contacto"
+                class="bg-white text-black px-5 py-2.5 rounded-full text-sm font-bold hover:bg-brand-primary hover:text-white transition-all"
+            >
+                Empezar Proyecto
+            </a>
+        </div>
+
+        <button class="md:hidden text-white">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+        </button>
+    </div>
+</nav>
