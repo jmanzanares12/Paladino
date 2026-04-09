@@ -1,0 +1,63 @@
+---
+const pasos = [
+    {
+        t: "Consultoría",
+        d: "Reunión inicial para entender tu visión, objetivos y desafíos comerciales.",
+        p: "01",
+    },
+    {
+        t: "Diseño UI/UX",
+        d: "Forjamos interfaces intuitivas y de alta conversión alineadas a tu marca.",
+        p: "02",
+    },
+    {
+        t: "Desarrollo Élite",
+        d: "Escribimos código limpio, rápido y seguro usando tecnologías modernas.",
+        p: "03",
+    },
+    {
+        t: "Lanzamiento & Soporte",
+        d: "Despliegue pro y acompañamiento para asegurar el éxito de tu plataforma.",
+        p: "04",
+    },
+];
+---
+
+<section id="steps" class="py-32 bg-white/[0.01]">
+    <div class="max-w-7xl mx-auto px-6 relative">
+        <div class="text-center mb-24">
+            <span
+                class="inline-block px-3 py-1 rounded-full bg-brand-primary/10 border border-brand-primary/20 text-brand-accent text-xs font-bold uppercase tracking-widest mb-6"
+            >
+                Metodología de Paladín
+            </span>
+            <h2
+                class="text-5xl md:text-7xl font-black tracking-tighter leading-none italic"
+            >
+                Tu visión<br />
+                <span class="text-white not-italic"> hecha realidad.</span>
+            </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+            {
+                pasos.map((step) => (
+                    <div class="relative group p-8 rounded-3xl bg-brand-card border border-white/5 hover:border-brand-primary/50 transition-all">
+                        <span class="absolute top-0 right-0 text-9xl font-black text-brand-primary/5 group-hover:text-brand-primary/10 transition-colors z-0">
+                            {step.p}
+                        </span>
+
+                        <div class="relative z-10 pt-16">
+                            <h4 class="text-2xl font-bold mb-3 text-white">
+                                {step.t}
+                            </h4>
+                            <p class="text-slate-400 text-sm leading-relaxed">
+                                {step.d}
+                            </p>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>

@@ -1,26 +1,51 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-dark: #050505;
-  --color-brand-card: #0D0D0D;
-  --color-brand-primary: #0066FF;
-  --color-brand-accent: #00C2FF;
+    --color-brand-dark: #050505;
+    --color-brand-card: #0D0D0D;
+    --color-brand-primary: #0066FF;
+    --color-brand-accent: #00C2FF;
+
+    @keyframes fade-in {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    --animate-fade-in: fade-in 0.8s ease-out forwards;
 }
 
 @layer base {
-  body {
-    background-image: radial-gradient(
-      circle at 50% -20%,
-      #003366 0%,
-      #050505 45%
-    );
-    background-attachment: fixed;
-  }
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        background-image: radial-gradient(circle at 50% -20%,
+                #003366 0%,
+                #050505 45%);
+        background-attachment: fixed;
+        background-color: var(--color-brand-dark);
+        color: white;
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    }
 }
 
-.bg-grid {
-  background-size: 40px 40px;
-  background-image: 
-    linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
+@layer utilities {
+    .bg-grid {
+        background-size: 40px 40px;
+        background-image:
+            linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    }
+
+    .shadow-glow {
+        shadow: 0 0 20px rgba(0, 102, 255, 0.2);
+    }
 }

@@ -1,0 +1,106 @@
+---
+const planes = [
+    {
+        nombre: "LANDING PAGE",
+        precio: "250",
+        sub: "Atrae Clientes y conviértalos en ventas",
+        checks: [
+            "Diseño personalizado que destaca",
+            "Optimización para conversiones",
+            "Experiencia de usuario intuitiva",
+            "Contenido claro y directo",
+        ],
+        popular: false,
+    },
+    {
+        nombre: "WEB ESTÁTICA",
+        precio: "500",
+        sub: "Impulsa tu negocio con una web",
+        checks: [
+            "Página optimizada para carga veloz",
+            "Cinco enlaces informativos claros",
+            "Diseño responsivo y atractivo",
+            "Contenido conciso y relevante",
+            "Interfaz amigable para el usuario",
+        ],
+        popular: true,
+    },
+    {
+        nombre: "APLICACIÓN WEB",
+        precio: "1000",
+        sub: "Gestiona tu negocio",
+        checks: [
+            "Interfaz de usuario intuitiva y atractiva",
+            "Funcionalidades robustas y escalables",
+            "Integración de bases de datos segura",
+            "Soporte para múltiples plataformas",
+            "Optimización para un rendimiento superior",
+        ],
+        popular: false,
+    },
+];
+---
+
+<section id="precios" class="py-32 bg-brand-dark relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-20">
+            <h2 class="text-5xl md:text-6xl font-black mb-4">
+                Nuestros precios
+            </h2>
+            <p class="text-slate-400 text-lg">Solo paga por lo que necesites</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+            {
+                planes.map((p) => (
+                    <div
+                        class={`relative flex flex-col p-10 rounded-[2.5rem] border transition-all duration-500 hover:-translate-y-2 ${p.popular ? "bg-gradient-to-b from-brand-card to-brand-dark border-brand-primary/40 shadow-[0_0_40px_rgba(0,102,255,0.15)]" : "bg-brand-card border-white/5"}`}
+                    >
+                        {p.popular && (
+                            <div class="absolute -top-4 -right-4 bg-green-500 text-white text-[10px] font-black px-4 py-1 rounded-full uppercase tracking-tighter shadow-lg rotate-12">
+                                Popular
+                            </div>
+                        )}
+
+                        <div class="mb-10 text-center">
+                            <h3 class="text-sm font-black tracking-[0.2em] text-slate-400 mb-6">
+                                {p.nombre}
+                            </h3>
+                            <p class="text-xs text-slate-500 mb-6 uppercase tracking-wider">
+                                {p.sub}
+                            </p>
+                            <div class="flex items-start justify-center gap-1">
+                                <span class="text-3xl font-bold mt-2 text-brand-primary">
+                                    $
+                                </span>
+                                <span class="text-7xl font-black tracking-tighter text-white">
+                                    {p.precio}
+                                </span>
+                            </div>
+                            <p class="text-slate-500 text-xs mt-2 italic">
+                                único pago
+                            </p>
+                        </div>
+
+                        <ul class="space-y-5 mb-12 flex-grow">
+                            {p.checks.map((check) => (
+                                <li class="flex items-start gap-3 text-sm text-slate-300">
+                                    <span class="w-5 h-5 rounded-full bg-brand-primary/20 flex items-center justify-center text-brand-primary text-[10px] shrink-0">
+                                        ✓
+                                    </span>
+                                    <span class="leading-tight">{check}</span>
+                                </li>
+                            ))}
+                        </ul>
+
+                        <button
+                            class={`w-full py-5 rounded-2xl font-black text-sm uppercase tracking-widest transition-all ${p.popular ? "bg-brand-primary text-white hover:bg-brand-accent shadow-lg shadow-brand-primary/25" : "bg-white/5 text-white hover:bg-white/10 border border-white/10"}`}
+                        >
+                            ¡Lo Quiero!
+                        </button>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>

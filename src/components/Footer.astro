@@ -1,85 +1,96 @@
----
-const currentYear = new Date().getFullYear();
----
-
-<footer class="bg-brand-dark border-t border-white/5 pt-20 pb-10">
+<footer class="pt-32 pb-12 border-t border-white/5 bg-brand-dark">
     <div class="max-w-7xl mx-auto px-6">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
             <div class="col-span-1 md:col-span-2">
-                <div class="flex items-center gap-2 mb-6">
-                    <div
-                        class="w-8 h-8 bg-brand-primary rounded flex items-center justify-center font-bold text-lg"
-                    >
-                        P
-                    </div>
-                    <span class="text-xl font-bold">PaladinDotBuild</span>
-                </div>
-                <p class="text-slate-400 max-w-sm leading-relaxed">
-                    Donde Innovación y Funcionalidad se Encuentran. Creamos
-                    experiencias visuales únicas que reflejan la identidad de tu
-                    empresa.
+                <h2 class="text-3xl font-black mb-6">
+                    PALADIN<span class="text-brand-primary">.</span>BUILD
+                </h2>
+                <p class="text-slate-400 max-w-sm mb-8">
+                    Diseño y desarrollo de élite desde Nicaragua para el mundo
+                    entero. Forjamos el futuro digital de tu empresa.
                 </p>
+                <div class="flex gap-4">
+                    <a
+                        href="#"
+                        class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand-primary transition-colors"
+                        >𝕏</a
+                    >
+                    <a
+                        href="#"
+                        class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand-primary transition-colors"
+                        >in</a
+                    >
+                    <a
+                        href="#"
+                        class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand-primary transition-colors"
+                        >ig</a
+                    >
+                </div>
             </div>
 
             <div>
                 <h4
-                    class="font-bold mb-6 text-white text-sm uppercase tracking-widest"
+                    class="font-bold mb-6 text-white uppercase text-xs tracking-widest"
                 >
                     Navegación
                 </h4>
                 <ul class="space-y-4 text-slate-400 text-sm">
                     <li>
                         <a
-                            href="#"
-                            class="hover:text-brand-primary transition-colors"
+                            href="#services"
+                            class="hover:text-white transition-colors"
                             >Servicios</a>
                     </li>
                     <li>
                         <a
-                            href="#"
-                            class="hover:text-brand-primary transition-colors"
-                            >Portafolio</a>
+                            href="#steps"
+                            class="hover:text-white transition-colors"
+                            >Nuestro Proceso</a>
                     </li>
                     <li>
                         <a
-                            href="#"
-                            class="hover:text-brand-primary transition-colors"
-                            >Sobre Nosotros</a>
+                            href="#prices"
+                            class="hover:text-white transition-colors"
+                            >Precios</a>
+                    </li>
+                    <li>
+                        <a
+                            href="/blog"
+                            class="hover:text-white transition-colors">Blog</a>
                     </li>
                 </ul>
             </div>
 
             <div>
                 <h4
-                    class="font-bold mb-6 text-white text-sm uppercase tracking-widest"
+                    class="font-bold mb-6 text-white uppercase text-xs tracking-widest"
                 >
                     Contacto
                 </h4>
                 <ul class="space-y-4 text-slate-400 text-sm">
                     <li class="flex items-center gap-2">
-                        📧 info@paladin.build
+                        ✉️ info@paladin.build
                     </li>
-                    <li class="flex items-center gap-2">
+                    <li class="mt-6">
+                        <a
+                            href="#contacto"
+                            class="text-brand-primary font-bold hover:underline"
+                            >Empezar proyecto →</a
+                        >
                     </li>
                 </ul>
             </div>
         </div>
 
         <div
-            class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4"
+            class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-slate-500 text-xs"
         >
-            <p class="text-slate-500 text-xs">
-                &copy; {currentYear} PaladinDotBuild. Todos los derechos reservados.
-            </p>
+            <p>© 2026 Paladin.Build. Todos los derechos reservados.</p>
             <div class="flex gap-6">
-                <a
-                    href="#"
-                    class="text-slate-500 hover:text-white transition-colors text-xs"
+                <a href="#" class="hover:text-white transition-colors"
                     >Términos</a
                 >
-                <a
-                    href="#"
-                    class="text-slate-500 hover:text-white transition-colors text-xs"
+                <a href="#" class="hover:text-white transition-colors"
                     >Privacidad</a
                 >
             </div>

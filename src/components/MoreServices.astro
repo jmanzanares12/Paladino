@@ -1,0 +1,75 @@
+---
+const masServicios = [
+    {
+        icon: "🌐",
+        title: "Dominio & Hosting",
+        desc: "Gestión completa de tu identidad digital.",
+    },
+    {
+        icon: "📩",
+        title: "Email Corporativo",
+        desc: "Comunicación profesional y segura.",
+    },
+    {
+        icon: "📱",
+        title: "App Development",
+        desc: "Soluciones nativas y progresivas.",
+    },
+    {
+        icon: "🛒",
+        title: "E-commerce",
+        desc: "Tiendas optimizadas para vender.",
+    },
+    {
+        icon: "📝",
+        title: "Blog System",
+        desc: "Gestores de contenido intuitivos.",
+    },
+    {
+        icon: "🎨",
+        title: "Diseño de Logo",
+        desc: "Identidad visual memorable.",
+    },
+    { icon: "🚀", title: "Branding", desc: "Estrategias de marca cohesivas." },
+    {
+        icon: "📱",
+        title: "Social Media",
+        desc: "Gestión y optimización de redes.",
+    },
+    {
+        icon: "📊",
+        title: "Ads & Plantillas",
+        desc: "Diseños para campañas de alto impacto.",
+    },
+];
+---
+
+<section class="py-32 bg-brand-dark/50">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="mb-16">
+            <h2 class="text-4xl font-black mb-4">Soluciones Integrales</h2>
+            <p class="text-slate-400 max-w-2xl">
+                Un ecosistema de servicios diseñado para cubrir cada ángulo de
+                tu presencia en línea.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {
+                masServicios.map((s) => (
+                    <div class="p-8 rounded-3xl bg-brand-card border border-white/5 hover:bg-white/[0.02] transition-colors group">
+                        <div class="text-3xl mb-4 group-hover:scale-110 transition-transform inline-block">
+                            {s.icon}
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-white">
+                            {s.title}
+                        </h3>
+                        <p class="text-slate-500 text-sm leading-relaxed">
+                            {s.desc}
+                        </p>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>
