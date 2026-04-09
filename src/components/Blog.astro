@@ -1,0 +1,55 @@
+---
+const posts = [
+    {
+        t: "Beneficios de una Landing Page",
+        cat: "Estrategia",
+        img: "/blog1.jpg",
+    },
+    {
+        t: "¿Por qué tu negocio necesita una web?",
+        cat: "Negocios",
+        img: "/blog2.jpg",
+    },
+    { t: "La importancia de la UX", cat: "Diseño", img: "/blog3.jpg" },
+];
+---
+
+<section id="blogs" class="py-32">
+    <div class="max-w-7xl mx-auto px-6">
+        <div
+            class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6"
+        >
+            <div>
+                <h2 class="text-5xl font-black mb-4">Insights & Recursos</h2>
+                <p class="text-slate-400">
+                    Explora nuestro blog y mantente al tanto de las últimas
+                    tendencias.
+                </p>
+            </div>
+            <a
+                href="/blog"
+                class="px-6 py-3 rounded-xl border border-white/10 hover:bg-white/5 transition-all font-bold"
+            >
+                Ver todos los posts →
+            </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {
+                posts.map((post) => (
+                    <article class="group cursor-pointer">
+                        <div class="aspect-video rounded-3xl overflow-hidden mb-6 bg-brand-card border border-white/5">
+                            <div class="w-full h-full bg-slate-800 group-hover:scale-105 transition-transform duration-500" />
+                        </div>
+                        <span class="text-brand-primary text-xs font-bold uppercase tracking-widest">
+                            {post.cat}
+                        </span>
+                        <h3 class="text-2xl font-bold mt-2 group-hover:text-brand-accent transition-colors">
+                            {post.t}
+                        </h3>
+                    </article>
+                ))
+            }
+        </div>
+    </div>
+</section>
