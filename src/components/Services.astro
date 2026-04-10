@@ -1,32 +1,37 @@
 ---
+import { Icon } from 'astro-icon/components';
+import MoreServices from "./MoreServices.astro";
+
 const services = [
     {
         title: "Desarrollo de Élite",
         desc: "Código limpio y escalable usando Astro, React y las tecnologías modernas de la actualidad.",
-        icon: "⚡",
+        icon: "lucide:zap", // Nombre del icono en Iconify
     },
     {
         title: "Seguridad de Paladín",
         desc: "Blindamos tus activos digitales con las mejores prácticas de seguridad y rendimiento.",
-        icon: "🛡️",
+        icon: "lucide:shield-check",
     },
     {
         title: "Diseños Modernos",
         desc: "Interfaces que no solo se ven bien, sino que convierten visitantes en clientes leales.",
-        icon: "🎨",
+        icon: "lucide:palette",
     },
 ];
 ---
 
 <section id="services" class="py-32 relative">
     <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-5xl font-black mb-14">¡Conoce nuestros servicios!</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             {
                 services.map((s) => (
                     <div class="group p-10 rounded-[2.5rem] bg-brand-card border border-white/5 hover:border-brand-primary/30 transition-all duration-500">
-                        <div class="text-4xl mb-6 grayscale group-hover:grayscale-0 transition-all">
-                            {s.icon}
+                        <div class="mb-6 text-brand-primary group-hover:scale-110 transition-transform duration-300">
+                            <Icon name={s.icon} class="w-12 h-12" />
                         </div>
+                        
                         <h3 class="text-2xl font-bold mb-4 text-white">
                             {s.title}
                         </h3>
@@ -38,4 +43,6 @@ const services = [
             }
         </div>
     </div>
+
+    <MoreServices />
 </section>

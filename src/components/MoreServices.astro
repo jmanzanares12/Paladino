@@ -1,50 +1,56 @@
 ---
+import { Icon } from "astro-icon/components";
+
 const masServicios = [
     {
-        icon: "🌐",
+        icon: "lucide:globe",
         title: "Dominio & Hosting",
         desc: "Gestión completa de tu identidad digital.",
     },
     {
-        icon: "📩",
+        icon: "lucide:mail",
         title: "Email Corporativo",
         desc: "Comunicación profesional y segura.",
     },
     {
-        icon: "📱",
+        icon: "lucide:smartphone",
         title: "App Development",
         desc: "Soluciones nativas y progresivas.",
     },
     {
-        icon: "🛒",
+        icon: "lucide:shopping-cart",
         title: "E-commerce",
         desc: "Tiendas optimizadas para vender.",
     },
     {
-        icon: "📝",
+        icon: "lucide:file-text",
         title: "Blog System",
         desc: "Gestores de contenido intuitivos.",
     },
     {
-        icon: "🎨",
+        icon: "lucide:pen-tool",
         title: "Diseño de Logo",
         desc: "Identidad visual memorable.",
     },
-    { icon: "🚀", title: "Branding", desc: "Estrategias de marca cohesivas." },
     {
-        icon: "📱",
+        icon: "lucide:rocket",
+        title: "Branding",
+        desc: "Estrategias de marca cohesivas.",
+    },
+    {
+        icon: "lucide:share-2",
         title: "Social Media",
         desc: "Gestión y optimización de redes.",
     },
     {
-        icon: "📊",
+        icon: "lucide:bar-chart-3",
         title: "Ads & Plantillas",
         desc: "Diseños para campañas de alto impacto.",
     },
 ];
 ---
 
-<section class="py-32 bg-brand-dark/50">
+<section class="py-16 bg-brand-dark/50">
     <div class="max-w-7xl mx-auto px-6">
         <div class="mb-16">
             <h2 class="text-4xl font-black mb-4">Soluciones Integrales</h2>
@@ -57,9 +63,9 @@ const masServicios = [
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {
                 masServicios.map((s) => (
-                    <div class="p-8 rounded-3xl bg-brand-card border border-white/5 hover:bg-white/[0.02] transition-colors group">
-                        <div class="text-3xl mb-4 group-hover:scale-110 transition-transform inline-block">
-                            {s.icon}
+                    <div class="p-8 rounded-3xl bg-brand-card border border-white/5 hover:border-brand-primary/30 hover:bg-white/[0.02] transition-all duration-300 group">
+                        <div class="mb-4 text-brand-primary group-hover:scale-110 transition-transform inline-block">
+                            <Icon name={s.icon} class="w-8 h-8" />
                         </div>
                         <h3 class="text-xl font-bold mb-2 text-white">
                             {s.title}

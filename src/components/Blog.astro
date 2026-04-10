@@ -1,16 +1,25 @@
 ---
+import { Image } from "astro:assets";
+import imagePost1 from '../assets/beneficios.avif';
+import imagePost2 from '../assets/blog.avif';
+import imagePost3 from '../assets/experiencia.avif';
+
 const posts = [
     {
         t: "Beneficios de una Landing Page",
         cat: "Estrategia",
-        img: "/blog1.jpg",
+        img: imagePost1,
     },
     {
         t: "¿Por qué tu negocio necesita una web?",
         cat: "Negocios",
-        img: "/blog2.jpg",
+        img: imagePost2,
     },
-    { t: "La importancia de la UX", cat: "Diseño", img: "/blog3.jpg" },
+    {
+        t: "La importancia de la UX",
+        cat: "Diseño",
+        img: imagePost3,
+    },
 ];
 ---
 
@@ -30,7 +39,7 @@ const posts = [
                 href="/blog"
                 class="px-6 py-3 rounded-xl border border-white/10 hover:bg-white/5 transition-all font-bold"
             >
-                Ver todos los posts →
+                Ver todos los posts
             </a>
         </div>
 
@@ -39,8 +48,22 @@ const posts = [
                 posts.map((post) => (
                     <article class="group cursor-pointer">
                         <div class="aspect-video rounded-3xl overflow-hidden mb-6 bg-brand-card border border-white/5">
-                            <div class="w-full h-full bg-slate-800 group-hover:scale-105 transition-transform duration-500" />
+                            {typeof post.img === "string" ? (
+                                <img
+                                    src={post.img}
+                                    alt={post.t}
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                />
+                            ) : (
+                                <Image
+                                    src={post.img}
+                                    alt={post.t}
+                                    width={800}
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                />
+                            )}
                         </div>
+
                         <span class="text-brand-primary text-xs font-bold uppercase tracking-widest">
                             {post.cat}
                         </span>
