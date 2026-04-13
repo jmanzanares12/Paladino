@@ -5,37 +5,49 @@ import MoreServices from "./MoreServices.astro";
 const services = [
     {
         title: "Desarrollo de Élite",
-        desc: "Código limpio y escalable usando Astro, React y las tecnologías modernas de la actualidad.",
-        icon: "lucide:zap", // Nombre del icono en Iconify
+        desc: "Código limpio y escalable usando Astro, React y las tecnologías más potentes del mercado actual.",
+        icon: "lucide:zap",
     },
     {
         title: "Seguridad de Paladín",
-        desc: "Blindamos tus activos digitales con las mejores prácticas de seguridad y rendimiento.",
+        desc: "Blindamos tus activos digitales con las mejores prácticas de seguridad, cifrado y rendimiento.",
         icon: "lucide:shield-check",
     },
     {
         title: "Diseños Modernos",
-        desc: "Interfaces que no solo se ven bien, sino que convierten visitantes en clientes leales.",
+        desc: "Interfaces de alta costura digital que no solo atraen, sino que convierten visitas en éxito comercial.",
         icon: "lucide:palette",
     },
 ];
 ---
 
-<section id="services" class="py-32 relative">
+<section id="services" class="py-16 md:py-24 lg:py-28 relative">
+    <div class="absolute top-1/2 left-0 -translate-y-1/2 w-64 h-64 bg-brand-primary/5 blur-[100px] -z-10"></div>
+
     <div class="max-w-7xl mx-auto px-6">
-        <h2 class="text-5xl font-black mb-14">¡Conoce nuestros servicios!</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="mb-12 md:mb-16">
+            <h2 class="text-4xl md:text-6xl font-black tracking-tighter italic">
+                Nuestros <span class="text-white not-italic">Servicios</span>
+            </h2>
+            <p class="text-slate-400 mt-4 max-w-xl text-sm md:text-base">
+                Soluciones técnicas diseñadas para quienes no se conforman con lo estándar.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
             {
                 services.map((s) => (
-                    <div class="group p-10 rounded-[2.5rem] bg-brand-card border border-white/5 hover:border-brand-primary/30 transition-all duration-500">
-                        <div class="mb-6 text-brand-primary group-hover:scale-110 transition-transform duration-300">
-                            <Icon name={s.icon} class="w-12 h-12" />
+                    <div class="group p-8 md:p-10 rounded-[2.5rem] bg-brand-card border border-white/5 hover:border-brand-primary/30 hover:bg-brand-primary/[0.02] transition-all duration-500 relative overflow-hidden">
+                        <div class="absolute -right-8 -top-8 w-24 h-24 bg-brand-primary/5 rounded-full blur-2xl group-hover:bg-brand-primary/10 transition-colors"></div>
+                        
+                        <div class="mb-6 text-brand-primary group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 inline-block">
+                            <Icon name={s.icon} class="w-10 h-10 md:w-12 md:h-12" />
                         </div>
                         
-                        <h3 class="text-2xl font-bold mb-4 text-white">
+                        <h3 class="text-xl md:text-2xl font-bold mb-4 text-white group-hover:text-brand-primary transition-colors">
                             {s.title}
                         </h3>
-                        <p class="text-slate-400 leading-relaxed text-sm">
+                        <p class="text-slate-400 leading-relaxed text-sm md:text-base">
                             {s.desc}
                         </p>
                     </div>

@@ -1,51 +1,53 @@
 @import "tailwindcss";
 
 @theme {
-    --color-brand-dark: #050505;
-    --color-brand-card: #0D0D0D;
-    --color-brand-primary: #0066FF;
+    --color-brand-dark: #0b0f1a;
+    --color-brand-card: #161b2b;
+    --color-brand-primary: #0066ff;
     --color-brand-accent: #00C2FF;
 
     @keyframes fade-in {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        from { opacity: 0, transform: translateY(20px)}
+        to { opacity: 1, transform: translateY(0)}
     }
 
     --animate-fade-in: fade-in 0.8s ease-out forwards;
 }
 
 @layer base {
-    html {
-        scroll-behavior: smooth;
-    }
+  html {
+    @apply scroll-smooth;
+  }
 
-    body {
-        background-image: radial-gradient(circle at 50% -20%,
-                #003366 0%,
-                #050505 45%);
-        background-attachment: fixed;
-        background-color: var(--color-brand-dark);
-        color: white;
-        font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    }
+  body {
+    font-family: var(--font-main);
+    @apply bg-brand-dark text-white selection:bg-brand-primary/30 selection:text-white antialiased overflow-x-hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-black {
+    font-family: var(--font-display);
+    @apply tracking-tighter;
+  }
+
+  ::-webkit-scrollbar {
+    @apply w-2.5;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-brand-dark;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-800 rounded-full border-2 border-brand-dark transition-colors;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-brand-primary;
+  }
 }
 
-@layer utilities {
-    .bg-grid {
-        background-size: 40px 40px;
-        background-image:
-            linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-    }
-
-    .shadow-glow {
-        shadow: 0 0 20px rgba(0, 102, 255, 0.2);
-    }
+@layer components {
+  .section-padding {
+    @apply py-16 md:py-24 lg:py-32;
+  }
 }

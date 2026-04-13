@@ -5,74 +5,80 @@ const masServicios = [
     {
         icon: "lucide:globe",
         title: "Dominio & Hosting",
-        desc: "Gestión completa de tu identidad digital.",
+        desc: "Gestión completa de tu identidad digital y despliegue.",
     },
     {
         icon: "lucide:mail",
         title: "Email Corporativo",
-        desc: "Comunicación profesional y segura.",
+        desc: "Comunicación profesional, segura y personalizada.",
     },
     {
         icon: "lucide:smartphone",
         title: "App Development",
-        desc: "Soluciones nativas y progresivas.",
+        desc: "Soluciones móviles nativas y progresivas (PWA).",
     },
     {
         icon: "lucide:shopping-cart",
         title: "E-commerce",
-        desc: "Tiendas optimizadas para vender.",
+        desc: "Tiendas de alto rendimiento optimizadas para convertir.",
     },
     {
         icon: "lucide:file-text",
         title: "Blog System",
-        desc: "Gestores de contenido intuitivos.",
+        desc: "Gestores de contenido (CMS) intuitivos y rápidos.",
     },
     {
         icon: "lucide:pen-tool",
         title: "Diseño de Logo",
-        desc: "Identidad visual memorable.",
+        desc: "Identidad visual memorable que define tu marca.",
     },
     {
         icon: "lucide:rocket",
         title: "Branding",
-        desc: "Estrategias de marca cohesivas.",
+        desc: "Estrategias de marca cohesivas y posicionamiento.",
     },
     {
         icon: "lucide:share-2",
         title: "Social Media",
-        desc: "Gestión y optimización de redes.",
+        desc: "Gestión y optimización de presencia en redes.",
     },
     {
         icon: "lucide:bar-chart-3",
         title: "Ads & Plantillas",
-        desc: "Diseños para campañas de alto impacto.",
+        desc: "Diseño de campañas de alto impacto y conversión.",
     },
 ];
 ---
 
-<section class="py-16 bg-brand-dark/50">
+<section class="pb-20 md:pb-32 relative overflow-hidden">
     <div class="max-w-7xl mx-auto px-6">
-        <div class="mb-16">
-            <h2 class="text-4xl font-black mb-4">Soluciones Integrales</h2>
-            <p class="text-slate-400 max-w-2xl">
+        <div class="mb-12 md:mb-16 pt-16 md:pt-20">
+            <h2 class="text-3xl md:text-5xl font-black tracking-tighter italic mb-4">
+                Soluciones <span class="text-white not-italic">Integrales</span>
+            </h2>
+            <p class="text-slate-400 max-w-2xl text-sm md:text-base leading-relaxed">
                 Un ecosistema de servicios diseñado para cubrir cada ángulo de
-                tu presencia en línea.
+                tu presencia en línea con precisión técnica.
             </p>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
             {
                 masServicios.map((s) => (
-                    <div class="p-8 rounded-3xl bg-brand-card border border-white/5 hover:border-brand-primary/30 hover:bg-white/[0.02] transition-all duration-300 group">
-                        <div class="mb-4 text-brand-primary group-hover:scale-110 transition-transform inline-block">
-                            <Icon name={s.icon} class="w-8 h-8" />
+                    <div class="p-6 md:p-8 rounded-[2rem] bg-brand-card/50 border border-white/5 hover:border-brand-primary/20 hover:bg-brand-primary/[0.01] transition-all duration-300 group">
+                        <div class="flex items-start gap-5">
+                            <div class="p-3 rounded-2xl bg-brand-primary/10 text-brand-primary group-hover:scale-110 group-hover:-rotate-3 transition-transform">
+                                <Icon name={s.icon} class="w-6 h-6" />
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold mb-2 text-white group-hover:text-brand-primary transition-colors">
+                                    {s.title}
+                                </h3>
+                                <p class="text-slate-500 text-xs md:text-sm leading-relaxed">
+                                    {s.desc}
+                                </p>
+                            </div>
                         </div>
-                        <h3 class="text-xl font-bold mb-2 text-white">
-                            {s.title}
-                        </h3>
-                        <p class="text-slate-500 text-sm leading-relaxed">
-                            {s.desc}
-                        </p>
                     </div>
                 ))
             }
