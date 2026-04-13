@@ -29,6 +29,10 @@
     @apply tracking-tighter;
   }
 
+  [id] {
+    scroll-margin-top: 6rem;
+  }
+
   ::-webkit-scrollbar {
     @apply w-2.5;
   }
