@@ -1,5 +1,23 @@
 ---
 import { Icon } from "astro-icon/components";
+
+const socialLinks = [
+    { 
+        name: 'X', 
+        icon: 'simple-icons:x',
+        href: 'https://x.com/paladindotbuild' 
+    },
+    { 
+        name: 'LinkedIn', 
+        icon: 'lucide:linkedin', 
+        href: 'https://www.linkedin.com/company/paladindotbuild/' 
+    },
+    { 
+        name: 'Instagram', 
+        icon: 'lucide:instagram', 
+        href: 'https://www.instagram.com/paladindotbuild' 
+    },
+];
 ---
 
 <footer class="pt-24 pb-12 border-t border-white/5 bg-brand-dark relative overflow-hidden">
@@ -17,13 +35,11 @@ import { Icon } from "astro-icon/components";
                 </p>
                 
                 <div class="flex gap-3">
-                    {['twitter', 'linkedin', 'instagram'].map((social) => (
-                        <a
-                            href="#"
+                    {socialLinks.map((social) => (
+                        <a href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.name}
                             class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center hover:bg-brand-primary hover:text-white transition-all duration-300 group"
-                            aria-label={social}
                         >
-                            <Icon name={`lucide:${social}`} class="w-5 h-5 opacity-70 group-hover:opacity-100" />
+                            <Icon name={social.icon} class="w-5 h-5 opacity-70 group-hover:opacity-100" />
                         </a>
                     ))}
                 </div>

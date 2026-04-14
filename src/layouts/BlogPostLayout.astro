@@ -1,0 +1,27 @@
+---
+import Layout from "../layouts/Layout.astro";
+const { frontmatter } = Astro.props;
+---
+<Layout title={frontmatter.title}>
+  <article class="pt-32 pb-20 max-w-4xl mx-auto px-6">
+    <header class="mb-12">
+      <span class="text-brand-primary font-black uppercase tracking-widest text-xs">
+        {frontmatter.category}
+      </span>
+      <h1 class="text-5xl md:text-7xl font-black mt-4 mb-6 italic uppercase leading-none">
+        {frontmatter.title}
+      </h1>
+      <p class="text-slate-400 text-xl italic">{frontmatter.description}</p>
+    </header>
+
+    <div class="aspect-video rounded-3xl overflow-hidden border border-white/10 mb-12 shadow-2xl shadow-brand-primary/10">
+      <img src={frontmatter.image} alt={frontmatter.title} class="w-full h-full object-cover" />
+    </div>
+
+    <div class="prose prose-invert prose-brand max-w-none 
+                prose-headings:font-black prose-headings:uppercase prose-headings:italic
+                prose-p:text-slate-300 prose-p:text-lg">
+      <slot />
+    </div>
+  </article>
+</Layout>
