@@ -2,6 +2,7 @@
 import { getCollection, type CollectionEntry } from "astro:content";
 import Layout from "../../layouts/Layout.astro"
 import BlogCard from "../../components/BlogCard.astro";
+import { Icon } from "astro-icon/components";
 
 const posts: CollectionEntry<"blog">[] = await getCollection("blog");
 
@@ -12,19 +13,27 @@ const sortedPosts = posts.sort((a, b) => {
 
 <Layout title="Insights & Recursos | Paladin Build">
   <section class="pt-40 pb-20 max-w-7xl mx-auto px-6">
+    <a 
+      href="/" 
+      class="inline-flex items-center gap-2 text-brand-primary font-black uppercase tracking-[0.2em] text-[10px] mb-12 hover:gap-4 transition-all duration-300 group"
+    >
+      <Icon name="lucide:arrow-left" class="w-4 h-4 transition-transform group-hover:-translate-x-1" />
+      Volver al Inicio
+    </a>
+
     <header class="max-w-3xl mb-16">
       <h1
-        class="text-6xl md:text-8xl font-black mb-6 italic tracking-tighter uppercase"
+        class="text-6xl md:text-8xl font-black mb-6 italic tracking-tighter uppercase leading-[0.9]"
       >
         Nuestros <span class="text-brand-primary not-italic">Insights</span>
       </h1>
-      <p class="text-slate-400 text-lg leading-relaxed">
+      <p class="text-slate-400 text-lg md:text-xl leading-relaxed italic">
         Estrategias de desarrollo y diseño para empresas que no se conforman con
         lo convencional.
       </p>
     </header>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-16">
       {sortedPosts.map((post) => <BlogCard post={post} />)}
     </div>
   </section>

@@ -3,7 +3,7 @@ title: "Beneficios de una Landing Page"
 description: "Descubre cómo una landing page bien diseñada puede aumentar tus conversiones."
 category: "Estrategia"
 date: 2025-01-01
-image: "/src/assets/beneficios.avif"
+image: "../../assets/beneficios.avif"
 ---
 
 ## El Poder de la Conversión Directa

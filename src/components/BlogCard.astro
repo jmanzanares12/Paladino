@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets"; //
 import type { CollectionEntry } from "astro:content";
 import { Icon } from "astro-icon/components";
 
@@ -18,9 +19,12 @@ const { post } = Astro.props as Props;
         >
         </div>
 
-        <img
+        {/* Reemplazamos <img> por <Image /> para procesar src/assets */}
+        <Image
             src={post.data.image}
             alt={post.data.title}
+            width={800} 
+            height={550}
             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
         />
 

@@ -6,12 +6,12 @@ const blog = defineCollection({
     pattern: '**/*.md',
     base: './src/content/blog',
   }),
-  schema: z.object({
+  schema: ({ image }) => z.object({
     title: z.string(),
     description: z.string(),
     category: z.string(),
     date: z.date(),
-    image: z.string(),
+    image: image(), 
   }),
 });
 

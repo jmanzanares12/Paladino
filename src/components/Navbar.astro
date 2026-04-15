@@ -1,9 +1,9 @@
 ---
 const navLinks = [
     { name: "Inicio", href: "/" },
-    { name: "Servicios", href: "#services" },
-    { name: "Precios", href: "#prices" },
-    { name: "Blog", href: "#blogs" },
+    { name: "Servicios", href: "/#services" },
+    { name: "Precios", href: "/#prices" },
+    { name: "Blog", href: "/#blogs" },
 ];
 ---
 
@@ -26,7 +26,8 @@ const navLinks = [
                         {link.name}
                     </a>
                 ))}
-                <a href="#contact" class="bg-brand-primary text-brand-dark px-6 py-2.5 rounded-xl text-[10px] font-black uppercase tracking-widest">
+                {/* También actualizamos el botón de acción principal */}
+                <a href="/#contact" class="bg-brand-primary text-brand-dark px-6 py-2.5 rounded-xl text-[10px] font-black uppercase tracking-widest">
                     Empezar Proyecto
                 </a>
             </div>
@@ -52,7 +53,8 @@ const navLinks = [
                     {link.name}
                 </a>
             ))}
-            <a href="#contact" data-mobile-link class="bg-brand-primary text-brand-dark px-10 py-5 rounded-2xl font-black uppercase tracking-widest text-sm shadow-2xl shadow-brand-primary/20">
+            {/* Actualizamos también el menú móvil */}
+            <a href="/#contact" data-mobile-link class="bg-brand-primary text-brand-dark px-10 py-5 rounded-2xl font-black uppercase tracking-widest text-sm shadow-2xl shadow-brand-primary/20">
                 Empezar Proyecto
             </a>
         </div>
