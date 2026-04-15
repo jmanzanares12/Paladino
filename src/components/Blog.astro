@@ -1,99 +1,51 @@
 ---
-import { Image } from "astro:assets";
+import { getCollection, type CollectionEntry } from "astro:content";
 import { Icon } from "astro-icon/components";
-import imagePost1 from '../assets/beneficios.avif';
-import imagePost2 from '../assets/blog.avif';
-import imagePost3 from '../assets/experiencia.avif';
+import BlogCard from "../components/BlogCard.astro";
 
-const posts = [
-    {
-        t: "Beneficios de una Landing Page",
-        cat: "Estrategia",
-        img: imagePost1,
-        desc: "Descubre cómo una página de aterrizaje optimizada puede disparar tus tasas de conversión."
-    },
-    {
-        t: "¿Por qué tu negocio necesita una web?",
-        cat: "Negocios",
-        img: imagePost2,
-        desc: "En la era digital, no tener presencia web es ser invisible para tus clientes potenciales."
-    },
-    {
-        t: "La importancia de la UX",
-        cat: "Diseño",
-        img: imagePost3,
-        desc: "El diseño no es solo cómo se ve, sino cómo funciona y qué siente el usuario al usarlo."
-    },
-];
+const posts: CollectionEntry<"blog">[] = await getCollection("blog");
+
+const sortedPosts = posts.sort(
+    (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime(),
+);
+
+const featuredPosts = sortedPosts.slice(0, 3);
 ---
 
 <section id="blogs" class="py-16 md:py-24 lg:py-32 relative">
     <div class="max-w-7xl mx-auto px-6">
-        
-        <div class="flex flex-col md:flex-row justify-between items-end mb-12 md:mb-20 gap-8">
+        <div
+            class="flex flex-col md:flex-row justify-between items-end mb-12 md:mb-20 gap-8"
+        >
             <div class="max-w-2xl">
-                <h2 class="text-4xl md:text-6xl font-black mb-6 italic tracking-tighter">
-                    Insights & <span class="text-white not-italic">Recursos</span>
+                <h2
+                    class="text-4xl md:text-6xl font-black mb-6 italic tracking-tighter"
+                >
+                    Insights & <span class="text-white not-italic"
+                        >Recursos</span
+                    >
                 </h2>
                 <p class="text-slate-400 text-sm md:text-base leading-relaxed">
-                    Explora nuestra biblioteca técnica y mantente a la vanguardia de las últimas 
-                    tendencias en desarrollo y diseño de élite.
+                    Explora nuestra biblioteca técnica y mantente a la
+                    vanguardia de las últimas tendencias en desarrollo y diseño
+                    de élite.
                 </p>
             </div>
-            
+
             <a
                 href="/blog"
                 class="group flex items-center gap-3 px-8 py-4 rounded-2xl border border-white/10 hover:border-brand-primary/50 hover:bg-brand-primary/5 transition-all duration-300 font-bold text-xs uppercase tracking-widest text-white"
             >
                 Ver todos los posts
-                <Icon name="lucide:arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <Icon
+                    name="lucide:arrow-right"
+                    class="w-4 h-4 group-hover:translate-x-1 transition-transform"
+                />
             </a>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
-            {
-                posts.map((post) => (
-                    <article class="group cursor-pointer flex flex-col">
-                        <div class="relative aspect-[16/10] rounded-[2rem] overflow-hidden mb-6 bg-brand-card border border-white/5 shadow-2xl">
-                            <div class="absolute inset-0 bg-brand-dark/20 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
-                            {typeof post.img === "string" ? (
-                                <img
-                                    src={post.img}
-                                    alt={post.t}
-                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                                />
-                            ) : (
-                                <Image
-                                    src={post.img}
-                                    alt={post.t}
-                                    width={800}
-                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                                />
-                            )}
-                            
-                            <div class="absolute top-4 left-4 z-20">
-                                <span class="px-3 py-1 rounded-full bg-brand-dark/80 backdrop-blur-md border border-white/10 text-brand-primary text-[10px] font-black uppercase tracking-widest">
-                                    {post.cat}
-                                </span>
-                            </div>
-                        </div>
-
-                        <div class="flex-grow px-2">
-                            <h3 class="text-xl md:text-2xl font-bold mb-3 text-white group-hover:text-brand-primary transition-colors duration-300 leading-tight">
-                                {post.t}
-                            </h3>
-                            <p class="text-slate-400 text-sm leading-relaxed line-clamp-2 group-hover:text-slate-300 transition-colors">
-                                {post.desc}
-                            </p>
-                            
-                            <div class="mt-6 flex items-center gap-2 text-brand-primary text-xs font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all duration-300 -translate-x-2 group-hover:translate-x-0">
-                                Leer más 
-                                <Icon name="lucide:chevron-right" class="w-4 h-4" />
-                            </div>
-                        </div>
-                    </article>
-                ))
-            }
+            {featuredPosts.map((post) => <BlogCard post={post} />)}
         </div>
     </div>
 </section>
