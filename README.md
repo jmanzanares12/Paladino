@@ -1,46 +1,31 @@
-# Astro Starter Kit: Basics
+# Paladin.Build | Digital Craftsmanship
 
-```sh
-pnpm create astro@latest -- --template basics
-```
+![Astro](https://img.shields.io/badge/Astro-BC52EE?style=for-the-badge&logo=astro&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+**Paladin.Build** es una plataforma digital de alto rendimiento diseñada para agencias y profesionales que buscan una presencia web minimalista, moderna y de "élite". Construida con **Astro 5.0**, enfocado en la velocidad extrema y una experiencia de usuario (UX) impecable.
 
-## 🚀 Project Structure
+## Características Principales
 
-Inside of your Astro project, you'll see the following folders and files:
+- **Rendimiento de Élite:** Puntuaciones cercanas a 100 en Lighthouse gracias al uso de islas de Astro y procesamiento de imágenes `.avif`.
+- **Diseño Minimalista:** UI oscura con acentos en azul eléctrico, tipografía audaz y micro-interacciones fluidas.
+- **Blog Engine:** Sistema de contenidos basado en **Content Collections** con Markdown, optimizado para SEO y legibilidad.
+- **Totalmente Responsivo:** Experiencia optimizada para dispositivos móviles con menús laterales dinámicos.
+- **Arquitectura Moderna:** Uso de Tailwind CSS para estilos, TypeScript para seguridad de tipos y Lucide Icons.
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
+## Stack Tecnológico
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+- **Framework:** [Astro](https://astro.build/) (Content Layer API).
+- **Estilos:** [Tailwind CSS](https://tailwindcss.com/) con el plugin `@tailwindcss/typography`.
+- **Iconografía:** `astro-icon` con sets de Lucide.
+- **Fuentes:** Tipografías personalizadas (Black & Italic) para una identidad de marca fuerte.
+- **Despliegue:** [Vercel](https://vercel.com/) (Edge Functions & Image Optimization).
 
-## 🧞 Commands
+## Instalación y Desarrollo
 
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+1. **Clonar el repositorio:**
+   ```bash
+   git clone [https://github.com/jmanzanares12/Paladino.git](https://github.com/jmanzanares12/Paladino.git)
+   cd Paladino
